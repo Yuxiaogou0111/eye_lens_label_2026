@@ -26,53 +26,173 @@
     }
 
     header{
-      background: #1f3c88;
+      background: linear-gradient(135deg, #1f3c88, #3559b7);
       color: white;
-      padding: 40px 20px;
+      padding: 48px 20px;
       text-align: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
     }
 
     header h1{
       margin: 0;
-      font-size: 38px;
+      font-size: 40px;
       font-style: italic;
+      letter-spacing: 0.5px;
     }
 
     header p{
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 18px;
       opacity: 0.95;
     }
 
     .container{
-      max-width: 1100px;
-      margin: 30px auto 60px auto;
+      max-width: 1180px;
+      margin: 30px auto 70px auto;
       padding: 0 20px;
     }
 
+    .phase{
+      margin-bottom: 42px;
+    }
+
+    .phase-header{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: white;
+      padding: 18px 22px;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    }
+
+    .phase-number{
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .phase-title{
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .phase-sub{
+      margin: 2px 0 0 0;
+      font-size: 15px;
+      opacity: 0.92;
+    }
+
+    .phase-1 .phase-header{
+      background: linear-gradient(135deg, #2f6aa8, #5b8fd6);
+    }
+
+    .phase-2 .phase-header{
+      background: linear-gradient(135deg, #2f8f83, #5db9ab);
+    }
+
+    .phase-3 .phase-header{
+      background: linear-gradient(135deg, #a66a1f, #d39a50);
+    }
+
+    .phase-4 .phase-header{
+      background: linear-gradient(135deg, #7a3ca5, #a76fd0);
+    }
+
+    .timeline{
+      position: relative;
+      margin-left: 16px;
+      padding-left: 26px;
+      border-left: 4px solid #d9dfef;
+    }
+
+    .phase-1 .timeline{
+      border-left-color: #8fb2e8;
+    }
+
+    .phase-2 .timeline{
+      border-left-color: #8fd2c7;
+    }
+
+    .phase-3 .timeline{
+      border-left-color: #e0bc86;
+    }
+
     .entry{
+      position: relative;
       background: white;
-      border-radius: 14px;
+      border-radius: 16px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.08);
       padding: 24px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
+    }
+
+    .entry::before{
+      content: "";
+      position: absolute;
+      left: -38px;
+      top: 28px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #1f3c88;
+      border: 4px solid #f5f6f8;
+      box-shadow: 0 0 0 3px rgba(31,60,136,0.15);
+    }
+
+    .phase-1 .entry{
+      border-left: 8px solid #5b8fd6;
+    }
+
+    .phase-1 .entry::before{
+      background: #5b8fd6;
+      box-shadow: 0 0 0 3px rgba(91,143,214,0.16);
+    }
+
+    .phase-2 .entry{
+      border-left: 8px solid #5db9ab;
+    }
+
+    .phase-2 .entry::before{
+      background: #5db9ab;
+      box-shadow: 0 0 0 3px rgba(93,185,171,0.16);
+    }
+
+    .phase-3 .entry{
+      border-left: 8px solid #d39a50;
+    }
+
+    .phase-3 .entry::before{
+      background: #d39a50;
+      box-shadow: 0 0 0 3px rgba(211,154,80,0.16);
     }
 
     .date{
       display: inline-block;
-      background: #e8eefc;
+      background: #eef3ff;
       color: #1f3c88;
       font-weight: bold;
       padding: 8px 14px;
       border-radius: 999px;
-      margin-bottom: 14px;
-      font-size: 18px;
+      margin-bottom: 12px;
+      font-size: 17px;
     }
 
     .entry h2{
-      margin-top: 8px;
-      margin-bottom: 12px;
+      margin-top: 4px;
+      margin-bottom: 10px;
       font-size: 28px;
+      line-height: 1.35;
     }
 
     .entry p{
@@ -89,7 +209,7 @@
     .media-box{
       background: #fafafa;
       border: 1px solid #e5e5e5;
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 14px;
     }
 
@@ -126,6 +246,28 @@
       color: #555;
     }
 
+    .summary-card{
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      padding: 26px 28px;
+      border-left: 10px solid #a76fd0;
+    }
+
+    .summary-list{
+      margin: 0;
+      padding-left: 1.3em;
+      font-size: 18px;
+    }
+
+    .summary-list li{
+      margin-bottom: 14px;
+    }
+
+    .summary-list li:last-child{
+      margin-bottom: 0;
+    }
+
     footer{
       text-align: center;
       color: #666;
@@ -138,16 +280,30 @@
         font-size: 30px;
       }
 
-      .entry h2{
-        font-size: 24px;
+      .phase-title{
+        font-size: 22px;
       }
 
-      .entry p{
+      .entry h2{
+        font-size: 23px;
+      }
+
+      .entry p,
+      .summary-list{
         font-size: 16px;
       }
 
       .media-box iframe{
         height: 320px;
+      }
+
+      .timeline{
+        margin-left: 8px;
+        padding-left: 18px;
+      }
+
+      .entry::before{
+        left: -29px;
       }
     }
   </style>
@@ -161,228 +317,290 @@
 
   <div class="container">
 
-    <section class="entry">
-      <div class="date">2026-04-08</div>
-      <h2>サケ稚魚搬入</h2>
-      <p>
-        450尾 / 10ºC / 500ℓタンクで一時蓄養（1 day）
-      </p>
-
-      <div class="media-grid">
-        <div class="media-box">
-          <img src="2稚魚搬入.png" alt="サケ稚魚搬入">
+    <!-- Phase 1 -->
+    <section class="phase phase-1">
+      <div class="phase-header">
+        <div class="phase-number">1</div>
+        <div>
+          <h2 class="phase-title">稚魚搬入・馴致</h2>
+          <p class="phase-sub">搬入から海水馴致までの初期段階</p>
         </div>
       </div>
-    </section>
 
-    <section class="entry">
-      <div class="date">2026-04-09</div>
-      <h2>海水馴致 / 水槽に分け</h2>
-      <p>
-        10時から海水に入れ、海水に慣れる余裕をあけて24時間給餌しない。
-      </p>
+      <div class="timeline">
+        <section class="entry">
+          <div class="date">2026-04-08</div>
+          <h2>サケ稚魚搬入</h2>
+          <p>
+            450尾 / 10ºC / 500ℓタンクで一時蓄養（1 day）
+          </p>
 
-      <div class="media-grid">
-        <div class="media-box">
-          <img src="1海水馴致.png" alt="海水馴致">
-        </div>
-      </div>
-    </section>
-
-    <section class="entry">
-      <div class="date">2026-04-10</div>
-      <h2>ラベル餌投与</h2>
-      <p>
-        ラベル餌の投与開始。摂餌状況と餌の見え方を記録。
-      </p>
-
-      <div class="media-grid">
-        <div class="media-box">
-          <div class="img-grid">
-            <div>
-              <img src="3投与.png" alt="ラベル餌投与 1">
-              <div class="caption">投与</div>
-            </div>
-            <div>
-              <img src="4観察.png" alt="ラベル餌投与 2">
-              <div class="caption">様子見</div>
-            </div>
-            <div>
-              <img src="5残餌.png" alt="ラベル餌投与 3">
-              <div class="caption">残餌</div>
-            </div>
-            <div>
-              <img src="6投与後換水.png" alt="ラベル餌投与 4">
-              <div class="caption">投与後水交換</div>
+          <div class="media-grid">
+            <div class="media-box">
+              <img src="2稚魚搬入.png" alt="サケ稚魚搬入">
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section class="entry">
-      <div class="date">2026-04-10</div>
-      <h2>フンの状態確認</h2>
-      <p>
-        フンの色・形状・排出の有無を確認
-      </p>
+        <section class="entry">
+          <div class="date">2026-04-09</div>
+          <h2>海水馴致 / 水槽に分け</h2>
+          <p>
+            10時から海水に入れ、海水に慣れる余裕をあけて24時間給餌しない。
+          </p>
 
-      <div class="media-grid">
-        <div class="media-box">
-          <div class="img-grid">
-            <div>
-              <img src="7フン観察.png" alt="フンの状態 1">
-            </div>
-            <div>
-              <img src="8フン比較.png" alt="フンの状態 2">
-              <div class="caption">比較</div>
+          <div class="media-grid">
+            <div class="media-box">
+              <img src="1海水馴致.png" alt="海水馴致">
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </section>
 
-    <section class="entry">
-      <div class="date">2026-04-13</div>
-      <h2>クロレラ → ミジンコ → サケ</h2>
-      <p>
-        クロレラ→ミジンコ→サケ
-      </p>
+    <!-- Phase 2 -->
+    <section class="phase phase-2">
+      <div class="phase-header">
+        <div class="phase-number">2</div>
+        <div>
+          <h2 class="phase-title">人工配合餌投与_その1</h2>
+          <p class="phase-sub">最初のラベル配合餌投与と排泄物確認</p>
+        </div>
+      </div>
 
-      <div class="media-grid">
-        <div class="media-box">
-          <div class="img-grid">
-            <div>
-              <img src="9.png" alt="使用する培養セット">
-            </div>
-            <div>
-              <img src="10投与テスト.png" alt="投与テスト">
-              <div class="caption">投与テスト</div>
+      <div class="timeline">
+        <section class="entry">
+          <div class="date">2026-04-10</div>
+          <h2>ラベル餌投与</h2>
+          <p>
+            ラベル餌の投与開始。摂餌状況と餌の見え方を記録。
+          </p>
+
+          <div class="media-grid">
+            <div class="media-box">
+              <div class="img-grid">
+                <div>
+                  <img src="3投与.png" alt="ラベル餌投与 1">
+                  <div class="caption">投与</div>
+                </div>
+                <div>
+                  <img src="4観察.png" alt="ラベル餌投与 2">
+                  <div class="caption">様子見</div>
+                </div>
+                <div>
+                  <img src="5残餌.png" alt="ラベル餌投与 3">
+                  <div class="caption">残餌</div>
+                </div>
+                <div>
+                  <img src="6投与後換水.png" alt="ラベル餌投与 4">
+                  <div class="caption">投与後水交換</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section class="entry">
-      <div class="date">2026-04-14</div>
-      <h2>クロレラを増殖させ・同位体付け</h2>
+        <section class="entry">
+          <div class="date">2026-04-10</div>
+          <h2>フンの状態確認</h2>
+          <p>
+            フンの色・形状・排出の有無を確認
+          </p>
 
-      <div class="media-grid">
-        <div class="media-box">
-          <img src="11chlorellaharvest.png" alt="クロレラ増殖と同位体付け">
-          <div class="caption">クロレラ培養</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="entry">
-      <div class="date">2026-04-14</div>
-      <h2>オオミジンコをクロレラ培養基に移す</h2>
-
-      <div class="media-grid">
-        <div class="media-box">
-          <div class="img-grid">
-            <div>
-              <img src="12.png" alt="オオミジンコ濾過">
-              <div class="caption">メッシュによる濾過</div>
-            </div>
-            <div>
-              <img src="13.png" alt="クロレラ→オオミジンコ">
-              <div class="caption">クロレラに配分</div>
+          <div class="media-grid">
+            <div class="media-box">
+              <div class="img-grid">
+                <div>
+                  <img src="7フン観察.png" alt="フンの状態 1">
+                </div>
+                <div>
+                  <img src="8フン比較.png" alt="フンの状態 2">
+                  <div class="caption">比較</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </section>
 
-    <section class="entry">
-      <div class="date">2026-04-14</div>
-      <h2>ミジンコ投与</h2>
-      <p>
-        ミジンコ投与時の摂餌反応
-      </p>
+    <!-- Phase 3 -->
+    <section class="phase phase-3">
+      <div class="phase-header">
+        <div class="phase-number">3</div>
+        <div>
+          <h2 class="phase-title">プランB：ミジンコで試す＋再度人工餌投与</h2>
+          <p class="phase-sub">活餌系の準備、投与試験、再投与に向けた確認</p>
+        </div>
+      </div>
 
-      <div class="media-grid">
-        <div class="media-box">
-          <div class="img-grid">
-            <div>
-              <img src="14.png" alt="ミジンコ濃縮">
-              <div class="caption">ミジンコを濃縮</div>
-            </div>
-            <div>
-              <img src="15.png" alt="1尾ずつ隔離する">
-              <div class="caption">隔離して餌投与準備</div>
-            </div>
-            <div>
-              <img src="16.png" alt="ミジンコ環境に移す">
+      <div class="timeline">
+        <section class="entry">
+          <div class="date">2026-04-13</div>
+          <h2>クロレラ → ミジンコ → サケ</h2>
+          <p>
+            クロレラ→ミジンコ→サケ
+          </p>
+
+          <div class="media-grid">
+            <div class="media-box">
+              <div class="img-grid">
+                <div>
+                  <img src="9.png" alt="使用する培養セット">
+                </div>
+                <div>
+                  <img src="10投与テスト.png" alt="投与テスト">
+                  <div class="caption">投与テスト</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <section class="entry">
+          <div class="date">2026-04-14</div>
+          <h2>クロレラを増殖させ・同位体付け</h2>
+
+          <div class="media-grid">
+            <div class="media-box">
+              <img src="11chlorellaharvest.png" alt="クロレラ増殖と同位体付け">
+              <div class="caption">クロレラ培養</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="entry">
+          <div class="date">2026-04-14</div>
+          <h2>オオミジンコをクロレラ培養基に移す</h2>
+
+          <div class="media-grid">
+            <div class="media-box">
+              <div class="img-grid">
+                <div>
+                  <img src="12.png" alt="オオミジンコ濾過">
+                  <div class="caption">メッシュによる濾過</div>
+                </div>
+                <div>
+                  <img src="13.png" alt="クロレラ→オオミジンコ">
+                  <div class="caption">クロレラに配分</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="entry">
+          <div class="date">2026-04-14</div>
+          <h2>ミジンコ投与（新しい100尾個体に）</h2>
+          <p>
+            ミジンコ投与時の摂餌反応
+          </p>
+
+          <div class="media-grid">
+            <div class="media-box">
+              <div class="img-grid">
+                <div>
+                  <img src="14.png" alt="ミジンコ濃縮">
+                  <div class="caption">ミジンコを濃縮</div>
+                </div>
+                <div>
+                  <img src="15.png" alt="1尾ずつ隔離する">
+                  <div class="caption">隔離して餌投与準備</div>
+                </div>
+                <div>
+                  <img src="16.png" alt="ミジンコ環境に移す">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="entry">
+          <div class="date">2026-04-14</div>
+          <h2>ミジンコ投与動画</h2>
+          <p>
+            ミジンコ投与時の摂餌行動
+          </p>
+
+          <div class="media-grid">
+            <div class="media-box">
+              <div class="video-grid">
+                <div>
+                  <iframe
+                    src="https://drive.google.com/file/d/1d1Ty6NB3zXDSCw5hnTtpxugEutVngcst/preview"
+                    allow="autoplay">
+                  </iframe>
+                  <div class="caption">角型アクリル水槽に入れるとき</div>
+                </div>
+                <div>
+                  <iframe
+                    src="https://drive.google.com/file/d/1zYz94vNamaVB7jy2RyDZaBJ77hMrmiUE/preview"
+                    allow="autoplay">
+                  </iframe>
+                  <div class="caption">円形水槽に入れて、20minほど完食</div>
+                </div>
+                <div>
+                  <iframe
+                    src="https://drive.google.com/file/d/1g4AmNO3ftcUfw3kL7FuZsQwyfnN4bP40/preview"
+                    allow="autoplay">
+                  </iframe>
+                  <div class="caption">配合餌を投与（投与後100%水交換）</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="entry">
+          <div class="date">2026-04-15</div>
+          <h2>フンの回収（乾燥後、餌・クロレラ・フンをスズカプレスに入れる）</h2>
+          <p>
+            緑色に染めてることが確認される
+          </p>
+
+          <div class="media-grid">
+            <div class="media-box">
+              <div class="img-grid">
+                <div>
+                  <img src="17.png" alt="状態確認">
+                  <div class="caption">昨日投与後の残餌を片づけたので、これらが排泄物である</div>
+                </div>
+                <div>
+                  <img src="18.png" alt="濾過・収集する">
+                  <div class="caption">フンの状態</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
-    <section class="entry">
-      <div class="date">2026-04-14</div>
-      <h2>ミジンコ投与動画</h2>
-      <p>
-        ミジンコ投与時の摂餌行動
-      </p>
-
-      <div class="media-grid">
-        <div class="media-box">
-          <div class="video-grid">
-            <div>
-              <iframe
-                src="https://drive.google.com/file/d/1d1Ty6NB3zXDSCw5hnTtpxugEutVngcst/preview"
-                allow="autoplay">
-              </iframe>
-              <div class="caption">角型アクリル水槽に入れるとき</div>
-            </div>
-            <div>
-              <iframe
-                src="https://drive.google.com/file/d/1zYz94vNamaVB7jy2RyDZaBJ77hMrmiUE/preview"
-                allow="autoplay">
-              </iframe>
-              <div class="caption">円形水槽に入れて、20minほど完食</div>
-            </div>
-            <div>
-              <iframe
-                src="https://drive.google.com/file/d/1g4AmNO3ftcUfw3kL7FuZsQwyfnN4bP40/preview"
-                allow="autoplay">
-              </iframe>
-              <div class="caption">配合餌を投与（投与後100%水交換）</div>
-            </div>
-          </div>
+    <!-- Phase 4 -->
+    <section class="phase phase-4">
+      <div class="phase-header">
+        <div class="phase-number">4</div>
+        <div>
+          <h2 class="phase-title">まとめ</h2>
+          <p class="phase-sub">1回目のラベリングとこれからの計画</p>
         </div>
+      </div>
+
+      <div class="summary-card">
+        <ol class="summary-list" type="a">
+          <li>活餌に慣れるまで時間かかるのと、食べる量がかなり多い.</li>
+          <li>人工ラベル餌・フン・クロレラの同位体比を測定する.</li>
+          <li>二日間飢餓させると、配合餌も食べるようになった.</li>
+          <li>連続的にサンプリングすることで、何日目に餌の同位体が水晶体に反映することを明らかにすることについて、すべての個体がラベル餌を食ってたのかを保証できないため、１日多めにサンプリングする（4尾 × 15~18日）.</li>
+          <li>2週間後の餌投与に向けて準備作業をリピートする.</li>
+        </ol>
       </div>
     </section>
-    <section class="entry">
-      <div class="date">2026-04-15</div>
-      <h2>フンの回収（乾燥後、餌・クロレラ・フンをスズカプレスに入れる）</h2>
-      <p>
-        緑色に染めてることが確認される
-      </p>
-    
-      <div class="media-grid">
-        <div class="media-box">
-          <div class="img-grid">
-            <div>
-              <img src="17.png" alt="状態確認">
-              <div class="caption">昨日投与後の残餌を片づけたので、これらが排泄物である</div>
-            </div>
-            <div>
-              <img src="18.png" alt="濾過・収集する">
-              <div class="caption">フンの状態</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>    
+
   </div>
 
   <footer>
-    Experimental report page powered by GitHub Pages
+    Experimental report page ©︎Yuxiao Gou
   </footer>
 
 </body>
